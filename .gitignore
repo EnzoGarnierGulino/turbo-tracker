@@ -2,6 +2,7 @@
 
 # bot_login
 bot_login.js
+bot_credentials.js
 
 # dependencies
 /node_modules
