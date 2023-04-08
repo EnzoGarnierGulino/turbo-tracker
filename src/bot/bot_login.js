@@ -8,7 +8,7 @@ function botLogin() {
     client.login(getToken);
 
     client.once("ready", () => {
-        console.log("Bot working !");
+        console.log("Bot is working !");
     })
 }
 
