@@ -9,11 +9,12 @@ let db = new sqlite3.Database('../database/TurboTracker.db', (err) => {
 
 });
 
-db.run("CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY, name TEXT)");
 
-db.run("INSERT INTO test (name) VALUES (?)", "John");
+//db.run("CREATE TABLE IF NOT EXISTS logs (total_members INTEGER, total_connected INTEGER, messages_in_channel INTEGER, msg_per_hour INTEGER)");
+//
+// db.run("INSERT INTO test (name) VALUES (?)", "John");
 
-db.all("SELECT * FROM test", (err, rows) => {
+db.all("SELECT * FROM logs", (err, rows) => {
     if (err) {
         throw err;
     }
@@ -22,12 +23,12 @@ db.all("SELECT * FROM test", (err, rows) => {
     });
 });
 
-db.all("SELECT * FROM test", [], { headers: true }, (err, rows) => {
-    if (err) {
-        throw err;
-    }
-    console.table(rows);
-});
+// db.all("SELECT * FROM test", [], { headers: true }, (err, rows) => {
+//     if (err) {
+//         throw err;
+//     }
+//     console.table(rows);
+// });
+
 
 db.close();
-
