@@ -5,18 +5,14 @@ const client = new Discord.Client({
 });
 const serverID = 1048367362098872360;
 
-function botLogin() {
-    client.login(getToken);
-    client.once("ready", () => {
-        console.log("Bot is working !");
-        getNumberOfMembers(serverID);
-    })
+async function botLogin() {
+    await client.login(getToken);
 }
 
-function getNumberOfMembers(serverID) {
-    let guild = client.guilds.cache.get(serverID);
-    return guild.memberCount;
+async function getNumberOfMembers(serverID) {
+    const server = await client.guilds.cache.get(serverID);
+    return server.memberCount;
 }
 
-botLogin();
+botLogin()
 getNumberOfMembers(serverID);
