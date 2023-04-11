@@ -1,10 +1,8 @@
-import './App.css';
-import Button from "./Button";
+import './App.css'
 
 function App() {
   return (
-
-      <Button/>
+      <p className={"title"}>TURBO TRACKER</p>
   );
 }
 
