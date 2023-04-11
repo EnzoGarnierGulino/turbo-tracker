@@ -43,3 +43,68 @@ getTotalMembers()
         console.error("Une erreur s'est produite : " + err);
     });
 
+function getTotalConnectedMembers() {
+    return new Promise((resolve, reject) => {
+        db.all("SELECT total_connected FROM logs", (err, rows) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);
+            }
+        });
+    });
+}
+
+getTotalConnectedMembers()
+    .then(rows => {
+        rows.forEach(row => {
+            return row.total_connected;
+        });
+    })
+    .catch(err => {
+        console.error("Une erreur s'est produite : " + err);
+    });
+
+function getNumberOfMessagesInChannel() {
+    return new Promise((resolve, reject) => {
+        db.all("SELECT msg_per_hour FROM logs", (err, rows) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);
+            }
+        });
+    });
+}
+
+getNumberOfMessagesInChannel()
+    .then(rows => {
+        rows.forEach(row => {
+            return row.messages_in_channel;
+        });
+    })
+    .catch(err => {
+        console.error("Une erreur s'est produite : " + err);
+    });
+
+function getMessagesPerHour() {
+    return new Promise((resolve, reject) => {
+        db.all("SELECT msg_per_hour FROM logs", (err, rows) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);
+            }
+        });
+    });
+}
+
+getMessagesPerHour()
+    .then(rows => {
+        rows.forEach(row => {
+            return row.msg_per_hour;
+        });
+    })
+    .catch(err => {
+        console.error("Une erreur s'est produite : " + err);
+    });
