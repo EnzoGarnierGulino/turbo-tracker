@@ -1,8 +1,9 @@
 import './App.css'
+import Title from "./Title.js";
 
 function App() {
   return (
-      <p className={"title"}>TURBO TRACKER</p>
+      <Title/>
   );
 }
 
