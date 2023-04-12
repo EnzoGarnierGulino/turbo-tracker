@@ -1,5 +1,5 @@
 * {
-  font-family: COCOGOOSE, serif;
+  font-family: "Montserrat", "Arial", sans-serif;
 }
 
 body {
@@ -7,7 +7,8 @@ body {
 }
 
 .title {
-  color: white;
+  margin-top: 2%;
+  background-image: linear-gradient(to right, #1a1a1a, #4d0026);
   font-size: 60px;
   text-align: center;
 }
