@@ -3,11 +3,12 @@ from discord.ext import tasks
 from discord import app_commands
 import sqlite3
 import time
+import asyncio
 
 try:
     import bot_credentials
 except ImportError:
-    print("Please make sure the functions.py file is in the same directory.")
+    print("Please make sure the bot_credentials.py file is in the same directory.")
     exit()
 
 sqliteConnection = sqlite3.connect('../database/TurboTracker.db')
@@ -101,11 +102,17 @@ async def messageperhour():
     else:
         # if table is not empty, update the existing row
         cur.execute("UPDATE logs SET msg_per_hour = ?", (message_per_hour,))
+    sqliteConnection.commit()
     message_per_hour = 0
 
 
 @tasks.loop(hours=24)
 async def getmessagesintrackedchan():
+    asyncio.create_task(countmessages())
+    await asyncio.sleep(0)
+
+
+async def countmessages():
     starttime = time.time()
     print("Started to count messages in the tracked channel")
     tracked_channel = client.get_channel(tracked_channel_id)
@@ -121,7 +128,7 @@ async def getmessagesintrackedchan():
     else:
         # if table is not empty, update the existing row
         cur.execute("UPDATE logs SET messages_in_channel = ?", (message_count,))
-
+    sqliteConnection.commit()
 
 @tasks.loop(minutes=1)
 async def gettotalmembers():
@@ -134,6 +141,7 @@ async def gettotalmembers():
     else:
         # if table is not empty, update the existing row
         cur.execute("UPDATE logs SET total_members = ?", (guild.member_count,))
+    sqliteConnection.commit()
 
 
 @tasks.loop(minutes=1)
@@ -151,6 +159,7 @@ async def gettotalconnected():
     else:
         # if table is not empty, update the existing row
         cur.execute("UPDATE logs SET total_connected = ?", (total_connected,))
+    sqliteConnection.commit()
 
 
 @client.event
