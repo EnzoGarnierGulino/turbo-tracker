@@ -5,7 +5,6 @@ body {
   background: linear-gradient(to right, #1a1a1a, #4d0026);
   .title {
     margin: 1%;
-    // color: #ec5f95;
     font-size: 80px;
     text-align: center;
     background: -webkit-linear-gradient(left, #a19f9f, pink);
@@ -32,5 +31,8 @@ body {
       font-size: 50px;
       margin: 0;
     }
+  }
+  .card:hover {
+    background-color: #5b223b;
   }
 }
