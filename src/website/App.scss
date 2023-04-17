@@ -5,14 +5,20 @@ body {
   background: linear-gradient(to right, #1a1a1a, #4d0026);
   .title {
     margin: 1%;
-    color: #ec5f95;
+    // color: #ec5f95;
     font-size: 80px;
     text-align: center;
+    background: -webkit-linear-gradient(left, #a19f9f, pink);
+    background: -o-linear-gradient(right, #a19f9f, pink);
+    background: -moz-linear-gradient(right, #a19f9f, pink);
+    background: linear-gradient(to right, #a19f9f , pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .card {
     float: left;
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
     transition: 0.3s;
     width: 40%;
     height: 140px;
