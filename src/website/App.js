@@ -1,15 +1,15 @@
 import './App.css'
 import Title from "./Title.js";
-import Label from "./Label.js";
+import Card from "./Card.js";
 
 function App() {
   return (
       <p>
-        <Title/>
-        <Label text={"Nombre d'utilisateurs : "}/>
-        <Label text={"Nombre d'utilisateurs connectés :"}/>
-          <Label text={"Nombre de messages dans général : "}/>
-          <Label text={"Nombre de messages par heure :"}/>
+          <Title/>
+          <Card textCardTitle={"Membres"} textCardValue={"152"}/>
+          <Card textCardTitle={"Membres connectés"} textCardValue={"238"}/>
+          <Card textCardTitle={"Messages dans général"} textCardValue={"4520"}/>
+          <Card textCardTitle={"Messages par heure"} textCardValue={"69"}/>
       </p>
   );
 }

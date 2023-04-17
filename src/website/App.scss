@@ -9,15 +9,22 @@ body {
     font-size: 80px;
     text-align: center;
   }
-  .label {
+  .card {
     float: left;
     text-align: center;
-    color: #e1b5c6;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     transition: 0.3s;
     width: 40%;
     height: 140px;
     border-radius: 10px;
     margin: 5%;
+    .cardTitle {
+      color: #e1b5c6;
+    }
+    .cardValue {
+      color: white;
+      font-size: 50px;
+      margin: 0;
+    }
   }
 }
