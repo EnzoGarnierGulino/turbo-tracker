@@ -7,12 +7,14 @@ body {
     margin: 1%;
     font-size: 80px;
     text-align: center;
-    background: -webkit-linear-gradient(left, #a19f9f, pink);
-    background: -o-linear-gradient(right, #a19f9f, pink);
-    background: -moz-linear-gradient(right, #a19f9f, pink);
-    background: linear-gradient(to right, #a19f9f , pink);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e1b5c6;
+    border-width: 2px;
+    border-style: ridge;
+    border-color: #e1b5c6;
+  }
+  .title:hover {
+    background-color: #481b2e;
+    transition: 0.3s;
   }
   .card {
     float: left;
@@ -33,6 +35,12 @@ body {
     }
   }
   .card:hover {
-    background-color: #5b223b;
+    background-color: #481b2e;
+  }
+  .aboutPresentation {
+    color: #e1b5c6;
+    font-size: 25px;
+    margin: 2%;
+    text-align: center;
   }
 }

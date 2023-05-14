@@ -21,7 +21,7 @@ let db = new sqlite3.Database('src/database/TurboTracker.db', (err) => {
 //     });
 // });
 
-function getTotalMembers() {
+export function getTotalMembers() {
     return new Promise((resolve, reject) => {
         db.all("SELECT total_members FROM logs", (err, rows) => {
             if (err) {

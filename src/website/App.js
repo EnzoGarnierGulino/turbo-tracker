@@ -1,17 +1,18 @@
 import './App.css'
-import Title from "./Title.js";
-import Card from "./Card.js";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Homepage from "./Homepage.js";
+import About from "./About.js";
 
-function App() {
-  return (
-      <p>
-          <Title/>
-          <Card textCardTitle={"Membres"} textCardValue={"152"}/>
-          <Card textCardTitle={"Membres connectés"} textCardValue={"238"}/>
-          <Card textCardTitle={"Messages dans général"} textCardValue={"4520"}/>
-          <Card textCardTitle={"Messages par heure"} textCardValue={"69"}/>
-      </p>
-  );
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/About" element={<About />} />
+                <Route path="*" element={<Homepage />} />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default App;

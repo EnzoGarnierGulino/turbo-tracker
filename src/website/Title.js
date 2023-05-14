@@ -1,7 +1,7 @@
 import React from "react";
 
-const Title = () => {
-    return <p className="title">TurboTracker</p>;
+const Title = (props) => {
+    return <p className="title" onClick={props.onClick}>TurboTracker</p>;
 };
 
 export default Title;
